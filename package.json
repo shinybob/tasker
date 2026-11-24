@@ -1,0 +1,16 @@
+{
+  "name": "tasker",
+  "productName": "Tasker",
+  "version": "1.0.0",
+  "description": "Simple local task list for macOS",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "env -u ELECTRON_RUN_AS_NODE electron .",
+    "package": "electron-packager . Tasker --platform=darwin --arch=arm64,x64 --out=dist --overwrite --ignore=^/dist"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@electron/packager": "^18.3.0",
+    "electron": "^33.0.0"
+  }
+}

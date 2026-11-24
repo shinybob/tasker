@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+  <title>Tasker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <div class="drag"></div>
+    <div class="side-top">
+      <input id="search" type="search" placeholder="Search tasks…" autocomplete="off">
+      <div class="filters">
+        <select id="priorityFilter" title="Filter by priority">
+          <option value="">All priorities</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+          <option value="none">None</option>
+        </select>
+        <label class="chk"><input type="checkbox" id="hideDone"> Hide done</label>
+      </div>
+      <button id="addTask" class="primary">+ New Task</button>
+    </div>
+    <ul id="list"></ul>
+    <div id="count"></div>
+  </aside>
+
+  <main id="detail">
+    <div class="drag"></div>
+    <div id="empty">Select a task or create a new one.</div>
+    <div id="editor" hidden>
+      <div class="row">
+        <input type="checkbox" id="done" title="Mark done">
+        <input id="title" class="title" placeholder="Task title" autocomplete="off">
+      </div>
+
+      <div class="row">
+        <label for="priority">Priority</label>
+        <select id="priority">
+          <option value="none">None</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <span class="spacer"></span>
+        <button id="delete" class="danger">Delete Task</button>
+      </div>
+
+      <label for="notes">Notes</label>
+      <textarea id="notes" placeholder="Add notes…"></textarea>
+
+      <label>Links</label>
+      <form id="linkForm" class="row">
+        <input id="linkInput" placeholder="Paste a link and press Enter" autocomplete="off">
+        <button type="submit">Add</button>
+      </form>
+      <ul id="links" class="items"></ul>
+
+      <label>Files</label>
+      <div id="drop" class="drop">
+        <button id="addFile" type="button">Add Files…</button>
+        <span class="hint">or drop files here</span>
+      </div>
+      <ul id="files" class="items"></ul>
+    </div>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>
